@@ -16,169 +16,90 @@
   <div class="wrap">
     <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; <span>Contact</span></div>
     <div class="page-hero-grid">
-      <div><span class="eyebrow">Chapter 06 · Begin</span></div>
-      <h1 class="display">Tell us about<br/>the <em>building</em> in<br/>your head.</h1>
+      <div><span class="eyebrow">— Reach us</span></div>
+      <h1 class="display">Tell us about<br/>your <em>project.</em></h1>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap contact-grid">
-    <!-- Form -->
-    <form class="c-form reveal" id="contact-form" novalidate>
-      <span class="eyebrow">— Begin an enquiry</span>
-      <h2>A few <em>questions</em><br/>to get us started.</h2>
-
-      <div class="field">
-        <label>Your name</label>
-        <input type="text" name="name" required placeholder="e.g. Anita Jose">
-        <span class="err">Please share your name</span>
+    <form class="form reveal" id="enquiry-form" novalidate>
+      <div class="form-row">
+        <label>Name <input name="name" type="text" required /></label>
+        <label>Phone / WhatsApp <input name="phone" type="tel" required /></label>
       </div>
-
-      <div class="field-row">
-        <div class="field">
-          <label>Email</label>
-          <input type="email" name="email" required placeholder="you@somewhere.in">
-          <span class="err">A valid email please</span>
-        </div>
-        <div class="field">
-          <label>Phone / WhatsApp</label>
-          <input type="tel" name="phone" placeholder="+91 ___ ___ ____">
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Where is your land / building?</label>
-        <input type="text" name="location" placeholder="e.g. Anjugramam, Kanyakumari">
-      </div>
-
-      <div class="field">
-        <label>What kind of project?</label>
-        <div class="chips" data-name="type">
-          <button type="button" class="chip" data-val="residence">A new home</button>
-          <button type="button" class="chip" data-val="renovation">A renovation</button>
-          <button type="button" class="chip" data-val="commercial">Small commercial</button>
-          <button type="button" class="chip" data-val="hospitality">Hospitality / retreat</button>
-          <button type="button" class="chip" data-val="not-sure">Not yet sure</button>
-        </div>
-        <input type="hidden" name="type" required>
-        <span class="err">Pick a direction (you can change later)</span>
-      </div>
-
-      <div class="field-row">
-        <div class="field">
-          <label>Approximate built area</label>
-          <select name="size">
-            <option value="">Select an area</option>
-            <option>Under 1,500 sq.ft.</option>
-            <option>1,500 – 3,000 sq.ft.</option>
-            <option>3,000 – 5,000 sq.ft.</option>
-            <option>Over 5,000 sq.ft.</option>
-            <option>Don't know yet</option>
+      <div class="form-row">
+        <label>Email <input name="email" type="email" required /></label>
+        <label>Where are you?
+          <select name="loc">
+            <option>Kanyakumari district</option>
+            <option>Tamil Nadu (other)</option>
+            <option>Kerala</option>
+            <option>Elsewhere in India</option>
+            <option>NRI — UAE / Sharjah</option>
+            <option>NRI — Singapore</option>
+            <option>NRI — other</option>
           </select>
-        </div>
-        <div class="field">
-          <label>Budget band, honest</label>
-          <select name="budget">
-            <option value="">Select a band</option>
-            <option>Under ₹40 lakh</option>
-            <option>₹40 – 75 lakh</option>
-            <option>₹75 lakh – 1.5 cr</option>
-            <option>₹1.5 – 3 cr</option>
-            <option>Over ₹3 cr</option>
-          </select>
-        </div>
+        </label>
       </div>
-
-      <div class="field">
-        <label>Tell us a little about it</label>
-        <textarea name="story" rows="5" placeholder="The land, the family, what you've imagined, what scares you. Anything."></textarea>
-      </div>
-
-      <div class="field">
-        <label>How did you find us?</label>
-        <input type="text" name="referral" placeholder="A friend, a magazine, a building you walked past…">
-      </div>
-
-      <div class="form-foot">
-        <button type="submit" class="btn btn-primary">Send enquiry <span class="arrow">→</span></button>
-        <span class="form-note">We answer within two working days. Saturdays included.</span>
-      </div>
-
-      <div class="form-success" hidden>
-        <h3><em>Thank you.</em></h3>
-        <p>We've received your note. Jimmy or Asha will write back within two working days. If you'd like to bring forward the conversation, call the studio on a Saturday morning — we keep the kettle on.</p>
-      </div>
+      <label>Service of interest
+        <select name="service">
+          <option>Architectural design</option>
+          <option>Plan approval</option>
+          <option>Construction (turnkey)</option>
+          <option>Renovation</option>
+          <option>Interior design</option>
+          <option>Modular kitchen</option>
+          <option>Loan assistance</option>
+          <option>Landscape design</option>
+          <option>Not sure yet — advise me</option>
+        </select>
+      </label>
+      <label>Tell us about your plot &amp; idea
+        <textarea name="message" rows="5" placeholder="Plot location, approximate size (sqft / cents), how many bedrooms, rough budget, and when you'd like to start." required></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary">Send enquiry <span class="arrow">→</span></button>
+      <div class="form-success" id="form-success">Thank you — we'll be in touch within two working days.</div>
     </form>
 
-    <!-- Side: studio info -->
-    <aside class="c-side">
-      <div class="reveal">
-        <span class="eyebrow">— Studio</span>
-        <h3 class="c-h">Court Road,<br/>Nagercoil — 629 001</h3>
-        <p class="c-addr">Ground floor, opposite Karmegham Hardware<br/>Court Road, Vetturnimadam<br/>Nagercoil, Kanyakumari Dist.<br/>Tamil Nadu — 629 001 · India</p>
+    <aside class="contact-aside reveal">
+      <div class="aside-block">
+        <div class="eyebrow">Head office</div>
+        <h4>Nagercoil</h4>
+        <p>Jey Pee Complex, WCC Road,<br/>Nagercoil – 629 001<br/>Kanyakumari District, Tamil Nadu</p>
       </div>
-
-      <div class="c-rows reveal">
-        <div class="c-row"><span class="eyebrow">Telephone</span><a href="tel:+914652235XXXX">+91 4652 235 XXX</a></div>
-        <div class="c-row"><span class="eyebrow">WhatsApp</span><a href="https://wa.me/919XXXXXXXXX">+91 9X XXX XXX XX</a></div>
-        <div class="c-row"><span class="eyebrow">Email</span><a href="mailto:hello@jimmys.studio">hello@jimmys.studio</a></div>
-        <div class="c-row"><span class="eyebrow">Instagram</span><a href="#">@jimmys.studio</a></div>
+      <div class="aside-block">
+        <div class="eyebrow">Branch office</div>
+        <h4>Kollemcode</h4>
+        <p>Near Old Mudippura Temple,<br/>Kollemcode<br/>Kanyakumari District, Tamil Nadu</p>
       </div>
-
-      <div class="c-hours reveal">
-        <span class="eyebrow">— Hours</span>
-        <ul>
-          <li><span>Mon — Fri</span><span>9:30 – 18:00</span></li>
-          <li><span>Saturday</span><span>10:00 – 14:00 (drop-in)</span></li>
-          <li><span>Sunday</span><span>Closed (we are with our families)</span></li>
-        </ul>
+      <div class="aside-block">
+        <div class="eyebrow">Phone &amp; WhatsApp</div>
+        <p><a href="tel:+917449021000">+91 74490 21000</a><br/><a href="tel:+917449031000">+91 74490 31000</a></p>
       </div>
-
-      <div class="c-coords reveal">
-        <span class="eyebrow">— Coordinates</span>
-        <div class="coords-num">8°10′59″ N · 77°24′42″ E</div>
-        <a href="#" class="btn btn-link">Open in maps →</a>
+      <div class="aside-block">
+        <div class="eyebrow">Email</div>
+        <p><a href="mailto:jimmysarchitectsbuilders@gmail.com">jimmysarchitectsbuilders@gmail.com</a></p>
+      </div>
+      <div class="aside-block">
+        <div class="eyebrow">Hours</div>
+        <p>Mon – Sat &nbsp;·&nbsp; 9:00 – 18:30<br/>Sunday &nbsp;·&nbsp; By appointment</p>
       </div>
     </aside>
   </div>
 </section>
 
-<!-- Map placeholder -->
-<section class="wrap">
-  <div class="ph c-map reveal"><span class="ph-label">Map — Court Road, Nagercoil</span></div>
-</section>
-
-<!-- FAQ -->
-<section class="section">
+<section class="section bg-2-section">
   <div class="wrap">
-    <span class="eyebrow reveal">— Before you write</span>
-    <h2 class="reveal" style="margin: 16px 0 56px;">A few <em>commonly</em> asked questions.</h2>
+    <span class="eyebrow reveal">— Common questions</span>
+    <h2 class="reveal" style="margin: 16px 0 48px;">Before you <em>write.</em></h2>
     <div class="faq">
-      <details class="reveal" open>
-        <summary>Do you take on projects outside Kanyakumari?</summary>
-        <p>Yes — within roughly a four-hour drive of the studio. That covers Tirunelveli, Tuticorin, the Travancore coast, and as far north as Kollam. Beyond that, we politely refer you to friends.</p>
-      </details>
-      <details class="reveal">
-        <summary>What's the smallest project you'll take?</summary>
-        <p>About 800 sq.ft. for a new build, or any meaningful renovation. We also do small commercial fit-outs &amp; restorations regardless of size if the brief is right.</p>
-      </details>
-      <details class="reveal">
-        <summary>How long is the wait to start?</summary>
-        <p>We're booked roughly nine to twelve months out. New projects starting construction begin late 2026. Drawings can begin sooner.</p>
-      </details>
-      <details class="reveal">
-        <summary>Do you charge for the first conversation?</summary>
-        <p>No. The first conversation — usually a Saturday — is on us. After that, a small site-visit fee covers travel, refunded against project fees if you proceed.</p>
-      </details>
-      <details class="reveal">
-        <summary>Can we bring our own contractor?</summary>
-        <p>Yes. We work either as design-build (Path A) or design-only (Path B). About 30% of our projects are design-only.</p>
-      </details>
-      <details class="reveal">
-        <summary>Can we work with you from abroad?</summary>
-        <p>Many of our clients are NRIs. We send a written Saturday update every week through construction, with photographs and an itemised account of what was done and what was costed.</p>
-      </details>
+      <details class="reveal" open><summary>Do you build for NRI clients?</summary><p>Yes — many of our clients live in the Gulf, Singapore and elsewhere. We send weekly photos and progress notes, and coordinate over WhatsApp and email so you can build remotely with confidence.</p></details>
+      <details class="reveal"><summary>Can you handle plan approvals?</summary><p>Yes. Plan approval is one of our ten services — we handle the full submission and follow-up with municipality, panchayat or town &amp; country planning, depending on your plot.</p></details>
+      <details class="reveal"><summary>Do you help with home loans?</summary><p>We assist every eligible client with documentation, valuation reports and bank coordination — including disbursement schedules aligned to construction stages.</p></details>
+      <details class="reveal"><summary>What's the smallest project you take on?</summary><p>We've done compact homes from 950 sqft, modular kitchens, and small shop fitouts. If the brief is right, the size doesn't matter.</p></details>
+      <details class="reveal"><summary>Do you work outside Kanyakumari district?</summary><p>Most of our work is in Kanyakumari, but we've taken on projects across southern Tamil Nadu and into Kerala. Send us your location — we'll tell you honestly if we can do it well.</p></details>
     </div>
   </div>
 </section>
@@ -186,177 +107,58 @@
 <div id="footer-mount"></div>
 
 <style>
-.contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 96px; align-items: start; }
-@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 64px; } }
+.contact-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 80px; align-items: start; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } }
 
-.c-form { padding: 0; position: relative; }
-.c-form h2 { font-size: clamp(32px, 4vw, 56px); margin: 16px 0 40px; }
-.field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; position: relative; }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-@media (max-width: 600px) { .field-row { grid-template-columns: 1fr; } }
-.field label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-.field input, .field select, .field textarea {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--line);
-  padding: 12px 0;
-  font-family: var(--serif);
-  font-size: 20px;
-  color: var(--ink);
-  outline: none;
-  transition: border-color 0.2s var(--ease);
-  width: 100%;
-}
-.field input::placeholder, .field textarea::placeholder { color: var(--ink-3); font-style: italic; }
-.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--ink); }
-.field textarea { resize: vertical; font-family: var(--sans); font-size: 15px; line-height: 1.5; }
+.form { display: flex; flex-direction: column; gap: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+.form label { display: flex; flex-direction: column; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3); }
+.form input, .form select, .form textarea { font-family: var(--sans); font-size: 16px; padding: 14px 16px; background: var(--paper); border: 1px solid var(--line); color: var(--ink); border-radius: 0; outline: none; transition: border-color 0.2s var(--ease); }
+.form input:focus, .form select:focus, .form textarea:focus { border-color: var(--accent); }
+.form textarea { resize: vertical; font-family: var(--sans); }
+.form button { align-self: flex-start; margin-top: 12px; }
+.form-success { display: none; padding: 20px; background: var(--bg-2); border: 1px solid var(--accent); color: var(--ink); font-family: var(--serif); font-size: 18px; font-style: italic; }
+.form-success.show { display: block; }
 
-.field .err {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  display: none;
-}
-.field.invalid .err { display: block; }
-.field.invalid input, .field.invalid select, .field.invalid textarea { border-color: var(--accent); }
+.contact-aside { padding: 32px; background: var(--bg-2); border: 1px solid var(--line); }
+.aside-block { padding: 16px 0; border-top: 1px solid var(--line); }
+.aside-block:first-child { padding-top: 0; border-top: none; }
+.aside-block h4 { font-family: var(--serif); font-size: 22px; font-style: italic; margin: 8px 0; }
+.aside-block .eyebrow { display: block; margin-bottom: 4px; }
+.aside-block p, .aside-block a { font-size: 14px; color: var(--ink-2); line-height: 1.6; }
+.aside-block a { border-bottom: 1px solid var(--line); }
+.aside-block a:hover { color: var(--accent); border-color: var(--accent); }
 
-.chips { display: flex; gap: 8px; flex-wrap: wrap; padding: 8px 0; }
-.chip {
-  background: transparent;
-  border: 1px solid var(--line);
-  padding: 8px 14px;
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--ink-2);
-  cursor: pointer;
-  transition: all 0.2s var(--ease);
-}
-.chip:hover { border-color: var(--ink); color: var(--ink); }
-.chip.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-
-.form-foot { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
-.form-note {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  color: var(--ink-3);
-}
-
-.form-success {
-  position: absolute;
-  inset: 0;
-  background: var(--bg);
-  padding: 64px 0;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.form-success h3 { font-size: 56px; margin-bottom: 24px; }
-.form-success p { max-width: 50ch; margin: 0 auto; }
-
-.c-side { display: flex; flex-direction: column; gap: 48px; padding: 32px; background: var(--bg-2); border: 1px solid var(--line); }
-.c-h { font-size: clamp(24px, 2.6vw, 32px); margin: 16px 0 16px; }
-.c-addr { font-size: 14px; line-height: 1.7; color: var(--ink-2); }
-
-.c-rows { display: flex; flex-direction: column; gap: 0; }
-.c-row {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 16px;
-  padding: 16px 0;
-  border-top: 1px solid var(--line);
-  align-items: baseline;
-  font-size: 15px;
-}
-.c-rows .c-row:last-child { border-bottom: 1px solid var(--line); }
-
-.c-hours ul { list-style: none; margin-top: 16px; }
-.c-hours li {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-top: 1px dashed var(--line);
-  font-size: 14px;
-}
-.c-hours li:last-child { border-bottom: 1px dashed var(--line); }
-.c-hours li span:last-child { color: var(--ink-3); font-family: var(--mono); font-size: 12px; }
-
-.coords-num { font-family: var(--serif); font-style: italic; font-size: 28px; margin: 12px 0 8px; color: var(--accent); }
-
-.c-map { aspect-ratio: 16 / 6; }
-
-.faq details {
-  border-top: 1px solid var(--line);
-  padding: 24px 0;
-}
-.faq details:last-of-type { border-bottom: 1px solid var(--line); }
-.faq summary {
-  font-family: var(--serif);
-  font-size: clamp(20px, 2.4vw, 28px);
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: center;
-}
+.faq { max-width: 800px; }
+.faq details { padding: 24px 0; border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { font-family: var(--serif); font-size: 24px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after {
-  content: '+';
-  font-family: var(--mono);
-  font-size: 24px;
-  color: var(--accent);
-  transition: transform 0.3s var(--ease);
-}
-.faq details[open] summary::after { content: '–'; }
-.faq p { margin-top: 16px; max-width: 70ch; }
+.faq summary::after { content: '+'; font-family: var(--serif); font-style: italic; color: var(--accent); transition: transform 0.3s var(--ease); font-size: 28px; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq p { margin-top: 16px; max-width: 70ch; font-size: 16px; }
 </style>
 
 <script>
-// chip group
-document.querySelectorAll('.chips').forEach(grp => {
-  const hidden = grp.parentElement.querySelector('input[type="hidden"]');
-  grp.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
-    grp.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
-    c.classList.add('on');
-    if (hidden) hidden.value = c.dataset.val;
-    grp.parentElement.classList.remove('invalid');
-  }));
-});
-
-// form
-const form = document.getElementById('contact-form');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  let ok = true;
-  form.querySelectorAll('[required]').forEach(input => {
-    const f = input.closest('.field');
-    if (!input.value || (input.type === 'email' && !/.+@.+\..+/.test(input.value))) {
-      f.classList.add('invalid');
-      ok = false;
-    } else {
-      f.classList.remove('invalid');
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('enquiry-form');
+  const success = document.getElementById('form-success');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+    form.querySelectorAll('[required]').forEach(f => {
+      const ok = f.value.trim().length > 0 && (f.type !== 'email' || /\S+@\S+\.\S+/.test(f.value));
+      f.style.borderColor = ok ? '' : '#c33';
+      if (!ok) valid = false;
+    });
+    if (!valid) return;
+    form.querySelectorAll('input, select, textarea, button').forEach(f => f.disabled = true);
+    success.classList.add('show');
   });
-  if (!ok) return;
-  form.querySelectorAll('.field, h2, .eyebrow, .form-foot').forEach(el => el.style.display = 'none');
-  form.querySelector('.form-success').hidden = false;
-});
-
-// clear errors on input
-form.querySelectorAll('input, select, textarea').forEach(i => {
-  i.addEventListener('input', () => i.closest('.field')?.classList.remove('invalid'));
 });
 </script>
+
 <script src="shell.js"></script>
 <script src="tweaks.js"></script>
 </body>

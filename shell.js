@@ -19,12 +19,12 @@
 
   function navHtml(active) {
     const links = [
-      ['index.html', 'Work'],
-      ['projects.html', 'Projects'],
+      ['index.html', 'Home'],
+      ['about.html', 'About'],
       ['services.html', 'Services'],
+      ['projects.html', 'Projects'],
       ['process.html', 'Process'],
-      ['about.html', 'Studio'],
-      ['testimonials.html', 'Voices'],
+      ['testimonials.html', 'Reviews'],
       ['contact.html', 'Contact']
     ];
     const linkHtml = links
@@ -40,11 +40,11 @@
             <span class="brand-mark">J</span>
             <span class="brand-text">
               Jimmy's
-              <small>Architects · Builders · Nagercoil</small>
+              <small>Architects · Builders · Est. 2009</small>
             </span>
           </a>
           <div class="nav-links">${linkHtml}</div>
-          <a href="contact.html" class="nav-cta">Start a project</a>
+          <a href="contact.html" class="nav-cta">Get a quote</a>
         </div>
       </nav>
     `;
@@ -56,38 +56,39 @@
         <div class="footer-inner">
           <div class="footer-grid">
             <div>
-              <div class="footer-display"><em>Build slow.<br/>Build well.</em></div>
-              <p class="footer-tagline">A Nagercoil studio designing homes, retreats and small commercial spaces along the southern coast of Tamil Nadu since 2004.</p>
+              <div class="footer-display"><em>Whose architect<br/>and builder<br/>is God.</em></div>
+              <p class="footer-tagline">End-to-end architectural &amp; construction services from Nagercoil — quality, aesthetics, perfection, timely delivery, value for money. Since 2009.</p>
             </div>
             <div>
-              <h4>Studio</h4>
+              <h4>Company</h4>
               <ul>
-                <li><a href="about.html">Our story</a></li>
-                <li><a href="process.html">Process</a></li>
-                <li><a href="testimonials.html">Voices</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4>Work</h4>
-              <ul>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Enquire</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="projects.html">Projects</a></li>
               </ul>
             </div>
             <div>
-              <h4>Visit</h4>
+              <h4>Reach us</h4>
               <ul>
-                <li>Court Road, Nagercoil</li>
-                <li>Kanyakumari Dist. — 629001</li>
-                <li><a href="tel:+914652000000">+91 4652 000 000</a></li>
-                <li><a href="mailto:studio@jimmys.in">studio@jimmys.in</a></li>
+                <li><a href="tel:+917449021000">+91 74490 21000</a></li>
+                <li><a href="tel:+917449031000">+91 74490 31000</a></li>
+                <li><a href="https://wa.me/917449021000">WhatsApp</a></li>
+                <li><a href="mailto:jimmysarchitectsbuilders@gmail.com">jimmysarchitectsbuilders@gmail.com</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Two offices</h4>
+              <ul>
+                <li>WCC Road, Jey Pee Complex,<br/>Nagercoil — 629 001</li>
+                <li style="margin-top:12px;">Near Old Mudippura Temple,<br/>Kollemcode</li>
+                <li style="margin-top:12px;">Kanyakumari Dist., Tamil Nadu</li>
               </ul>
             </div>
           </div>
           <div class="footer-bottom">
-            <span>© 2004 — 2026 · Jimmy's Architects &amp; Builders</span>
-            <span>NGRCL · 8.1833° N, 77.4119° E</span>
+            <span>© 2009 — 2026 · Jimmy's Architects &amp; Builders</span>
+            <span>15 years · Kanyakumari · Tamil Nadu</span>
           </div>
         </div>
       </footer>
