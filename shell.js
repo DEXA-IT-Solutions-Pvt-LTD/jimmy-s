@@ -4,7 +4,7 @@
   const SESSION_KEY = 'jimmy-visitor-session-id';
   const TRACKING_CONFIG = window.JIMMY_TRACKING || {};
   // Set these via window.JIMMY_TRACKING = { endpoint: '', siteKey: '' } before loading this script.
-  const TRACKING_ENDPOINT = TRACKING_CONFIG.endpoint || 'https://visitor-tracker-api.keyflow-dev-backend.workers.dev/track-event';
+  const TRACKING_ENDPOINT = TRACKING_CONFIG.endpoint || 'https://visitor-tracker-api.keyflow-dev-backend.workers.dev/collect';
   const TRACKING_SITE_KEY = TRACKING_CONFIG.siteKey || 'jimmy-s-main';
 
   function getSessionId() {
@@ -51,6 +51,7 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body,
+        credentials: 'omit',
         keepalive: true
       }).catch(() => {});
     } catch (_) {
