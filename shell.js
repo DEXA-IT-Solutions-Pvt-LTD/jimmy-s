@@ -2,7 +2,7 @@
 (function () {
   // Apply theme from localStorage
   const stored = JSON.parse(localStorage.getItem('jimmy-tweaks') || '{}');
-  const theme = stored.theme || 'cream';
+  const theme = stored.theme || 'navy';
   const accent = stored.accent || null;
   const fontPair = stored.fontPair || 'serif-sans';
   document.documentElement.setAttribute('data-theme', theme);
@@ -37,7 +37,7 @@
       <nav class="nav">
         <div class="nav-inner">
           <a href="index.html" class="brand">
-            <span class="brand-mark">J</span>
+            <img src="logo.png" alt="Jimmy's Architects &amp; Builders" class="brand-logo" />
             <span class="brand-text">
               Jimmy's
               <small>Architects · Builders · Est. 2009</small>
@@ -56,6 +56,7 @@
         <div class="footer-inner">
           <div class="footer-grid">
             <div>
+              <img src="logo.png" alt="Jimmy's Architects &amp; Builders" style="width: 96px; height: 96px; background: #fff; padding: 6px; margin-bottom: 24px; display: block;" />
               <div class="footer-display"><em>Whose architect<br/>and builder<br/>is God.</em></div>
               <p class="footer-tagline">End-to-end architectural &amp; construction services from Nagercoil — quality, aesthetics, perfection, timely delivery, value for money. Since 2009.</p>
             </div>

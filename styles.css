@@ -1,17 +1,17 @@
 /* Jimmy's Architects & Builders — Design System */
 
 :root {
-  /* Theme: Warm Cream (default) */
-  --bg: #f5f0e8;
-  --bg-2: #ebe3d6;
-  --bg-3: #e0d6c4;
-  --ink: #1a1612;
-  --ink-2: #3d352c;
-  --ink-3: #6b6155;
-  --line: #c9bfae;
-  --paper: #fbf7f0;
-  --accent: #b85c38;
-  --accent-2: #8a3f23;
+  /* Theme: Brand Navy (default — matches Jimmy's identity) */
+  --bg: #0d1b2e;
+  --bg-2: #142339;
+  --bg-3: #1c2c44;
+  --ink: #f5f1e8;
+  --ink-2: #cfc8b8;
+  --ink-3: #8a8475;
+  --line: #2a3a52;
+  --paper: #0a1626;
+  --accent: #f5b800;
+  --accent-2: #d49d00;
 
   /* Type */
   --serif: 'Cormorant Garamond', 'Times New Roman', serif;
@@ -25,6 +25,19 @@
 
   /* Easing */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-theme="cream"] {
+  --bg: #f5f0e8;
+  --bg-2: #ebe3d6;
+  --bg-3: #e0d6c4;
+  --ink: #1a1612;
+  --ink-2: #3d352c;
+  --ink-3: #6b6155;
+  --line: #c9bfae;
+  --paper: #fbf7f0;
+  --accent: #e89622;
+  --accent-2: #b87214;
 }
 
 [data-theme="stone"] {
@@ -164,24 +177,16 @@ p.lead {
   letter-spacing: -0.01em;
 }
 
-.brand-mark {
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid var(--ink);
-  display: grid;
-  place-items: center;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 18px;
-  position: relative;
-}
-
-.brand-mark::after {
-  content: '';
-  position: absolute;
-  inset: 3px;
-  border: 1px solid var(--ink);
-  pointer-events: none;
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  display: block;
+  background: #fff;
+  padding: 2px;
+  border: 1px solid var(--line);
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px;
 }
 
 .brand-text {
