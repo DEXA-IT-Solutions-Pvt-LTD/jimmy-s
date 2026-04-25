@@ -1,5 +1,78 @@
 // Shared shell: nav + footer + theme + reveal-on-scroll + tweaks
 (function () {
+  const TRACKING_KEY = 'jimmy-visitor-events';
+  const SESSION_KEY = 'jimmy-visitor-session-id';
+  const TRACKING_CONFIG = window.JIMMY_TRACKING || {};
+  // Set these via window.JIMMY_TRACKING = { endpoint: '', siteKey: '' } before loading this script.
+  const TRACKING_ENDPOINT = TRACKING_CONFIG.endpoint || 'https://visitor-tracker-api.keyflow-dev-backend.workers.dev/track-event';
+  const TRACKING_SITE_KEY = TRACKING_CONFIG.siteKey || 'jimmy-s-main';
+
+  function getSessionId() {
+    const existing = sessionStorage.getItem(SESSION_KEY);
+    if (existing) return existing;
+    const id = (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : `sess_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+    sessionStorage.setItem(SESSION_KEY, id);
+    return id;
+  }
+
+  function getDeviceInfo() {
+    return {
+      userAgent: navigator.userAgent,
+      language: navigator.language,
+      platform: navigator.platform,
+      screen: `${window.screen.width}x${window.screen.height}`,
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'unknown'
+    };
+  }
+
+  function saveEventLocally(payload) {
+    const current = JSON.parse(localStorage.getItem(TRACKING_KEY) || '[]');
+    current.push(payload);
+    // Keep last 500 events so storage does not grow forever.
+    const trimmed = current.slice(-500);
+    localStorage.setItem(TRACKING_KEY, JSON.stringify(trimmed));
+  }
+
+  function sendEvent(payload) {
+    saveEventLocally(payload);
+    if (!TRACKING_ENDPOINT) return;
+
+    const body = JSON.stringify(payload);
+    try {
+      if (navigator.sendBeacon) {
+        const blob = new Blob([body], { type: 'application/json' });
+        navigator.sendBeacon(TRACKING_ENDPOINT, blob);
+        return;
+      }
+      fetch(TRACKING_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body,
+        keepalive: true
+      }).catch(() => {});
+    } catch (_) {
+      // Ignore telemetry failures so UX is never blocked.
+    }
+  }
+
+  function track(eventType, data) {
+    const payload = {
+      eventType,
+      timestampIso: new Date().toISOString(),
+      sessionId: getSessionId(),
+      siteKey: TRACKING_SITE_KEY || null,
+      page: location.pathname.split('/').pop() || 'index.html',
+      url: location.href,
+      referrer: document.referrer || null,
+      device: getDeviceInfo(),
+      ...data
+    };
+    sendEvent(payload);
+  }
+
   // Apply theme from localStorage
   const stored = JSON.parse(localStorage.getItem('jimmy-tweaks') || '{}');
   const theme = stored.theme || 'navy';
@@ -98,10 +171,21 @@
 
   // Inject
   document.addEventListener('DOMContentLoaded', () => {
+    track('page_visit');
+
     const navMount = document.getElementById('nav-mount');
     const footerMount = document.getElementById('footer-mount');
     if (navMount) navMount.outerHTML = navHtml(navMount.dataset.active || '');
     if (footerMount) footerMount.outerHTML = footerHtml();
+
+    document.querySelectorAll('a[href]').forEach((link) => {
+      link.addEventListener('click', () => {
+        track('navigation_click', {
+          targetHref: link.getAttribute('href') || '',
+          targetText: (link.textContent || '').trim().slice(0, 100)
+        });
+      });
+    });
 
     // Reveal on scroll
     const io = new IntersectionObserver(
